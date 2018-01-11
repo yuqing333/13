@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+
+        android:gravity="center|left"
+        android:textStyle="bold"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"
+        android:text="@string/number"
+        android:textSize="18sp"
+        android:id="@+id/number"/>
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/number"
+        android:background="@color/colorPrimaryDark"
+        android:id="@+id/img" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="left|center"
+
+        android:padding="10dp"
+        android:id="@+id/username"
+        android:textSize="16sp"
+        android:layout_toRightOf="@id/img"
+        android:text="@string/userName"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:paddingRight="20dp"
+        android:layout_alignParentRight="true"
+        android:textSize="16sp"
+        android:gravity="center"
+
+        android:id="@+id/energy"
+        android:text="@string/energy"/>
+
+    <ImageView
+        android:background="#ddd"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="30dp"
+        android:layout_height="20dp" />
+
+</RelativeLayout>
