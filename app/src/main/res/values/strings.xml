@@ -1,6 +1,16 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="number">22</string>
-    <string name="userName">wifi</string>
+    <string name="userName">神丹大神</string>
+    <string name="message">天呐快来看我中奖了</string>
+    <string name="football">竞彩足球</string>
+    <string name="acount">方案金额: </string>
+    <string name="acount_num">219元</string>
+    <string name="rate">本单盈利率: </string>
+    <string name="rate_num">15800%</string>
+    <string name="bonus">税后奖金: </string>
+    <string name="bonus_num">214584.00元</string>
+    <string name="read">阅读5874</string>
+    <string name="comment">评论582</string>
     <string name="energy">17.2Kg</string>
 </resources>
