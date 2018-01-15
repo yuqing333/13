@@ -4,51 +4,52 @@
     android:layout_height="80dp">
 
     <TextView
+        android:id="@+id/number"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
 
+        android:layout_height="match_parent"
         android:gravity="center|left"
-        android:textStyle="bold"
         android:paddingLeft="20dp"
         android:paddingRight="10dp"
         android:text="@string/number"
         android:textSize="18sp"
-        android:id="@+id/number"/>
+        android:textStyle="bold" />
 
     <ImageView
+        android:id="@+id/img"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_centerVertical="true"
         android:layout_toRightOf="@id/number"
-        android:background="@color/colorPrimaryDark"
-        android:id="@+id/img" />
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="left|center"
+        android:background="@color/colorPrimaryDark" />
 
-        android:padding="10dp"
+    <TextView
         android:id="@+id/username"
-        android:textSize="16sp"
-        android:layout_toRightOf="@id/img"
-        android:text="@string/userName"/>
-
-    <TextView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:paddingRight="20dp"
-        android:layout_alignParentRight="true"
-        android:textSize="16sp"
-        android:gravity="center"
 
+        android:layout_toRightOf="@id/img"
+        android:gravity="left|center"
+        android:padding="10dp"
+        android:text="@string/userName"
+        android:textSize="16sp" />
+
+    <TextView
         android:id="@+id/energy"
-        android:text="@string/energy"/>
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:paddingRight="20dp"
+
+        android:text="@string/energy"
+        android:textSize="16sp" />
 
     <ImageView
-        android:background="#ddd"
+        android:layout_width="30dp"
+        android:layout_height="20dp"
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
-        android:layout_width="30dp"
-        android:layout_height="20dp" />
+        android:background="#ddd" />
 
 </RelativeLayout>
