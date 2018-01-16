@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="bt_login">登录</string>
+    <string name="et_phone">请输入手机号</string>
+    <string name="et_pwd">请输入密码</string>
+    <string name="tv_he">呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵</string>
+    <string name="tv_size">12sp</string>
+    <string name="cb_singleline">单行显示</string>
+    <string name="rb_start">开头省略</string>
+    <string name="rb_middle">中间省略</string>
+    <string name="rb_end">结尾省略</string>
+</resources>
