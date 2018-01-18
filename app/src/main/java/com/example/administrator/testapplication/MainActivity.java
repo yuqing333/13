@@ -15,23 +15,39 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button button;
+    private Button button1, button2, button3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button = (Button) findViewById(R.id.button1);
-        button.setOnClickListener(onClickListener);
+        button1 = (Button) findViewById(R.id.button1);
+        button2 = (Button) findViewById(R.id.button2);
+        button3 = (Button) findViewById(R.id.button3);
+        button1.setOnClickListener(onClickListener);
+        button2.setOnClickListener(onClickListener);
+        button3.setOnClickListener(onClickListener);
     }
 
     private View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
-            Intent intent = new Intent(MainActivity.this, Activity1.class);
-            startActivity(intent);
+            switch (view.getId()) {
+                case R.id.button1:
+                    startActivity(new Intent(MainActivity.this, Activity1.class));
+                    break;
+                case R.id.button2:
+                    startActivity(new Intent(MainActivity.this, Activity2.class));
+                    break;
+                case R.id.button3:
+                    Intent intent = new Intent();
+                    intent.setAction("staticReceiver");
+                    sendBroadcast(intent);
+                default:
+                    break;
 
+            }
         }
     };
 }
