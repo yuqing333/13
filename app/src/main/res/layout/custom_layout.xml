@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:tag_margin_vertical="2dp"
+    app:tag_margin_horizontal="4dp">
+
+    <com.example.administrator.animatortest.CustomViewGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="xxxxxxx" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="qqq" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="cccccccccccccc" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="wwwwwww" />
+
+        <TextView
+            style="@style/text_flag_01"
+            android:text="aaaaaa" />
+
+    </com.example.administrator.animatortest.CustomViewGroup>
+
+</android.support.constraint.ConstraintLayout>
