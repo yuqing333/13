@@ -33,7 +33,6 @@ public class SudokuView extends ViewGroup {
     protected void onLayout(boolean changed, int l, int t, int r, int b) {
         int startLeft = 0;
         int startTop = 0;
-        int lineWidth = 0;
         int maxHeight = 0;
 
         int left, right, top, bottom;
@@ -46,8 +45,8 @@ public class SudokuView extends ViewGroup {
             }
 
             if (startLeft + childWidth > width) {
-                maxHeight+=childHeight;
-                startTop =maxHeight;
+                maxHeight += childHeight;
+                startTop = maxHeight;
                 startLeft = 0;
 
                 left = startLeft;
