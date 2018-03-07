@@ -19,7 +19,8 @@ public class MyRingView extends View {
     private int width;
     private int height;
     private int radius;
-    private int ringCount;
+    private int sweepAngle;
+    private float animatorValue;
     private ValueAnimator animator;
     private String drawText;
 
@@ -53,23 +54,23 @@ public class MyRingView extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         canvas.drawRect(0, 0, width, height, backgroundPaint);
-        float numberWidth=numberPaint.measureText(int2Str(supportCompany));
-        canvas.drawText(int2Str(supportCompany), width / 2 - numberWidth/2, height / 2 + 6, numberPaint);
-        float textWidth=textPaint.measureText(drawText);
-        canvas.drawText(drawText, width / 2-textWidth/2, height * 3 / 4 + 24, textPaint);
+        float numberWidth = numberPaint.measureText(int2Str(supportCompany));
+        canvas.drawText(int2Str(supportCompany), width / 2 - numberWidth / 2, height / 2 + 6, numberPaint);
+        float textWidth = textPaint.measureText(drawText);
+        canvas.drawText(drawText, width / 2 - textWidth / 2, height * 3 / 4 + 24, textPaint);
         canvas.drawArc(width / 2 - radius, height / 2 - radius, width / 2 + radius, height / 2 + radius, 90, 360, false, ringBackgroundPaint);
-        canvas.drawArc(width / 2 - radius, height / 2 - radius, width / 2 + radius, height / 2 + radius, -90, ringCount * 36 / totalCompany, false, ringPaint);
+        canvas.drawArc(width / 2 - radius, height / 2 - radius, width / 2 + radius, height / 2 + radius, -90, sweepAngle * animatorValue, false, ringPaint);
 
     }
 
     private void initAnimation() {
-        animator = ValueAnimator.ofInt();
+        animator = ValueAnimator.ofFloat(0, 1.0f);
         animator.setDuration(2000);
 //        animator.setRepeatCount(-1);
         animator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() {
             @Override
             public void onAnimationUpdate(ValueAnimator animation) {
-                ringCount = (int) animation.getAnimatedValue();
+                animatorValue = (float) animation.getAnimatedValue();
                 postInvalidate();
             }
         });
@@ -114,17 +115,17 @@ public class MyRingView extends View {
     public void setSupportAndTotalNumber(int supportNum, int totalNum) {
         supportCompany = supportNum;
         totalCompany = totalNum;
-        setIntValue();
+        setSweepAngle();
+    }
+
+    private void setSweepAngle() {
+        sweepAngle = supportCompany * 360 / totalCompany;
     }
 
     public void setUnderText(String text) {
         drawText = text;
     }
 
-    private void setIntValue() {
-        animator.setIntValues(0, supportCompany * 10);
-
-    }
 
     private String int2Str(int i) {
         return String.valueOf(i);

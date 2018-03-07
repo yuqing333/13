@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void initView() {
         MyRingView ringView = findViewById(R.id.ring1);
-        ringView.setSupportAndTotalNumber(10, 24);
+        ringView.setSupportAndTotalNumber(9, 20);
         ringView.setUnderText("主胜增强");
         ringView.start();
     }
