@@ -19,7 +19,7 @@ public class MyRingView extends View {
     private int width;
     private int height;
     private int radius;
-    private int sweepAngle;
+    private float sweepAngle;
     private float animatorValue;
     private ValueAnimator animator;
     private String drawText;
@@ -119,7 +119,7 @@ public class MyRingView extends View {
     }
 
     private void setSweepAngle() {
-        sweepAngle = supportCompany * 360 / totalCompany;
+        sweepAngle = (float) supportCompany / totalCompany * 360;
     }
 
     public void setUnderText(String text) {
