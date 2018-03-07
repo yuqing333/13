@@ -23,16 +23,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initView();
+        setContentView(R.layout.sudoku_layout);
 
 
     }
 
-    private void initView() {
-        MyRingView ringView = findViewById(R.id.ring1);
-        ringView.setSupportAndTotalNumber(9, 20);
-        ringView.setUnderText("主胜增强");
-        ringView.start();
-    }
 }
