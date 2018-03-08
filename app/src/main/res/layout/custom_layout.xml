@@ -29,6 +29,10 @@
         <TextView
             style="@style/text_flag_01"
             android:text="aaaaaa" />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ball"/>
 
     </com.example.administrator.animatortest.CustomViewGroup>
 

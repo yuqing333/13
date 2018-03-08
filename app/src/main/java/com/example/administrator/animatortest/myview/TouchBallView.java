@@ -55,13 +55,12 @@ public class TouchBallView extends View {
         canvas.drawCircle(ballPosition.x, ballPosition.y, radius, ballPaint);
     }
 
+
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         super.onTouchEvent(event);
         switch (event.getActionMasked()) {
             case MotionEvent.ACTION_DOWN:
-                touchStartPostiton.x = event.getX();
-                touchStartPostiton.y = event.getY();
                 break;
             case MotionEvent.ACTION_MOVE:
                 ballPosition.x = event.getX();
