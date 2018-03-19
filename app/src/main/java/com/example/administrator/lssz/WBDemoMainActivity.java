@@ -41,35 +41,44 @@ public class WBDemoMainActivity extends Activity {
             tvShowToken.setText(mAccessToken.toString());
 
         } else {
-            mSsoHandler.authorize(new WbAuthListener() {
-                @Override
-                public void onSuccess(final Oauth2AccessToken oauth2AccessToken) {
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            mAccessToken = oauth2AccessToken;
-                            AccessTokenKeeper.writeAccessToken(WBDemoMainActivity.this, mAccessToken);
-                            Toast.makeText(WBDemoMainActivity.this, "授权成功", Toast.LENGTH_SHORT).show();
-                            tvShowToken.setText(mAccessToken.toString());
-                        }
-                    });
-
-                }
-
-                @Override
-                public void cancel() {
-                    Toast.makeText(WBDemoMainActivity.this, "取消授权", Toast.LENGTH_SHORT).show();
-
-                }
-
-                @Override
-                public void onFailure(WbConnectErrorMessage wbConnectErrorMessage) {
-                    Toast.makeText(WBDemoMainActivity.this, "授权失败", Toast.LENGTH_SHORT).show();
-
-                }
-            });
-
+            Oauth2InAll();
         }
+    }
+
+
+    public void getMessages(View view){
+
+    }
+    private void Oauth2InAll(){
+        mSsoHandler.authorize(new WbAuthListener() {
+            @Override
+            public void onSuccess(final Oauth2AccessToken oauth2AccessToken) {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mAccessToken = oauth2AccessToken;
+                        AccessTokenKeeper.writeAccessToken(WBDemoMainActivity.this, mAccessToken);
+                        Toast.makeText(WBDemoMainActivity.this, "授权成功", Toast.LENGTH_SHORT).show();
+                        tvShowToken.setText(mAccessToken.toString());
+                    }
+                });
+
+            }
+
+            @Override
+            public void cancel() {
+                Toast.makeText(WBDemoMainActivity.this, "取消授权", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(WbConnectErrorMessage wbConnectErrorMessage) {
+                Toast.makeText(WBDemoMainActivity.this, "授权失败", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+
+
     }
 
     @Override
